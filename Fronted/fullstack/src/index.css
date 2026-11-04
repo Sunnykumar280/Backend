@@ -1,0 +1,31 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+} 
+
+html,
+body,
+#root {
+    height: 100%;
+    width : 100%;
+}
+
+html{
+    background-color: black;
+    font-family: "Gill Sans", sans-serif;
+}
+.note{
+    background-color: rgb(243, 154, 20);
+    padding: 1rem;
+    border-radius: 0.7rem;
+    max-width: 30rem;
+    color: white;
+
+}
+.notes{
+    display: flex;
+    gap: 1rem;
+    padding-block: 1rem;
+    padding-inline: 3rem;
+}

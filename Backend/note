@@ -1,0 +1,38 @@
+const app = require("./src/app")
+
+app.listen(3000, () =>{
+    console.log("server is running on port 3000")
+})
+
+
+app.delete("/api/notes", async (req, res) => {
+    //params ko id do jo req se aa rha hain 
+    const id = req.params.id
+    //noteModel naam se hi bana h n ab delete ke liye kaam karo
+await noteModel.findByIdAndDelete(id)
+    //agar id mil jayegi and delete karke kuch apne taraf se msg dedo
+    
+
+
+    
+})
+//PATCH /API/NOTES/:id denge 
+// update the description of the note with the given id 
+//req.body = {description}
+app.patch("/api/notes/:id", async (req, res) => {
+    //again id lelo params se
+     const id = req.params.id
+//destructuring se description leleo req.body mein so that usko update akrna hoga same in dukan first dukan take the object which they have to update 
+
+     const { description } = req.body
+     //now another thing
+     await noteModel.findByIdAndUpdate(id, { description })
+
+     res.status(200).json({
+        message: "note is updated now"
+     })
+}
+
+)
+
+module.exports = app
